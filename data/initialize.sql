@@ -3,6 +3,31 @@
 -- SELECT DATABASE();
 -- USE checkpoint2;
 
+
+
+-- Admin users login table,
+-- Will store user_id, username, and bcrypt'ed hashed password in this table 
+CREATE TABLE users (
+  user_id INT NOT NULL AUTO_INCREMENT,
+  username VARCHAR(50) NOT NULL,
+  password VARCHAR(50) NOT NULL,
+  PRIMARY KEY (user_id)
+);
+
+
+INSERT INTO users
+	(username, password)
+VALUES 
+  ("testuser1","password"),
+  ("testuser2","seCu4ePass49!");
+
+SELECT * FROM users;
+
+
+
+
+
+
 -- This is the primary working table "products" table
 -- Will create a web form for a user to submit items into this table
 DROP TABLE products;
@@ -38,7 +63,7 @@ CREATE TABLE product_info (
   merchant_sku VARCHAR(50) NOT NULL,
   asin_sku VARCHAR(50) NOT NULL,
   fnsku VARCHAR(50),
- INstInstagram I amz_title VARCHAR(200),
+  amz_title VARCHAR(200),
   amz_price INT,
   case_qty INT,
   pallet_qty INT,
